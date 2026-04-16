@@ -304,7 +304,6 @@
       const token = getField('apiToken') || 'apiToken_placeholder';
       fetch(`https://bna134.github.io/green-api-back/account/settings?idInstance=${instanceId}&apiTokenInstance=${token}`)
         .then(response => {
-        if (!response.ok) throw new Error('Network error');
         return response.json();
         })
         .then(data => {
