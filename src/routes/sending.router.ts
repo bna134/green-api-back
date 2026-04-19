@@ -5,13 +5,11 @@ export const sendingRouter = Router();
 
 sendingRouter.post('/message', async (req: Request, res: Response)=>{
     try{
-        console.log(req.body)
         const message = await sendingController.sendMessage(
             (req.query.idInstance as string),
             (req.query.apiTokenInstance as string),
             req.body
         )
-        console.log(message);
         res.json(message)
     } catch(error){
         res.send((error as Error).message)
