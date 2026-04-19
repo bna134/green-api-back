@@ -8,7 +8,10 @@ dotenv.config();
 export const app: Application = express();
 const port = process.env.PORT || 9000;
 
-app.use(cors({origin: 'https://bna134.github.io'}))
+app.use(cors({
+  origin: 'https://bna134.github.io',
+  methods: ['GET', 'POST']
+}))
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
