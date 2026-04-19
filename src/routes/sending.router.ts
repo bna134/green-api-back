@@ -14,7 +14,10 @@ sendingRouter.post('/message', async (req: Request, res: Response)=>{
         const message = await sendingController.sendMessage(
             (req.query.idInstance as string),
             (req.query.apiTokenInstance as string),
-            req.body
+            {   
+                chatId: req.body.chatId,
+                message: req.body.message
+            }
         )
         res.json(message)
     } catch(error){
