@@ -1,12 +1,14 @@
 import express, { Application } from 'express';
 import dotenv from 'dotenv';
-import { routes } from './routes/router'
+import { routes } from './routes/router';
+import cors from  'cors';
 
 dotenv.config();
 
 export const app: Application = express();
 const port = process.env.PORT || 9000;
 
+app.use(cors({origin: 'https://bna134.github.io'}))
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
