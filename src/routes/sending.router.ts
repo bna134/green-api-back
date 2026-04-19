@@ -1,13 +1,7 @@
 import { Request, Response, Router } from "express";
 import { sendingController } from "../controllers/sending.controller";
-import cors from  'cors';
 
 export const sendingRouter = Router();
-
-sendingRouter.use(cors({
-  origin: 'https://bna134.github.io',
-  methods: ['GET', 'POST']
-}))
 
 sendingRouter.post('/message', async (req: Request, res: Response)=>{
     try{
