@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 import dotenv from 'dotenv';
 import { routes } from './routes/router';
 import cors from  'cors';
+import bodyParser from 'body-parser';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
 })
+app.use(bodyParser.json());
 app.use(express.json()); 
 app.use('/', routes);
 app.set('trust proxy', 1); 
