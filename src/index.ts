@@ -16,9 +16,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
 })
-app.use(express.urlencoded({
-  extended: true
-})); 
+app.use(express.json()); 
 app.use('/', routes);
 app.set('trust proxy', 1); 
 
