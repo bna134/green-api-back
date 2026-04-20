@@ -17,6 +17,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
 })
+app.use(express.text({type: "text/plain"}))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json()); 
